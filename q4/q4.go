@@ -14,15 +14,15 @@ func ClassifyPrices(prices []int) (int, error) {
 	if len(prices) == 0 {
 		return 0, fmt.Errorf("erro")
 	}
-	if len(prices)==1{
-		return 3,nil
+	if len(prices) == 1 {
+		return 3, nil
 	}
 	crescente := 0
 	decrescente := 0
 	for i := 0; i < len(prices)-1; i++ {
-		if prices[i] > prices[i+1] {
+		if prices[i] < prices[i+1] {
 			crescente++
-		} else if prices[i] < prices[i+1] {
+		} else if prices[i] > prices[i+1] {
 			decrescente++
 		}
 	}
