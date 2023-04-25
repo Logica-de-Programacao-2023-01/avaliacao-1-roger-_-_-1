@@ -14,16 +14,21 @@ func ClassifyPrices(prices []int) (int, error) {
 	if len(prices) == 0 {
 		return 0, fmt.Errorf("lista vasia")
 	}
+	crescente:= 0
+	decrescente:=0
 	for i := 0; i <= len(prices); {
-		if prices[i] == prices[i+1] {
-			return 0, nil
+		if prices[i] >= prices[i+1] {
+			crescente++
 		} else if prices[i] < prices[i+1] {
-			return 1, nil
-		} else {
-			return 2, nil
-
+			decrescente++
 		}
 	}
-
-return 0, nil
+	if decrescente != 0 && crescente==0{
+		return 2,nil
+	}else if crescente != 0 && decrescente==0 {
+		return 1,nil
+	}else if decrescente != 0 && crescente!=0 {
+		return 3,nil
+	}
+	return 0, nil
 }
