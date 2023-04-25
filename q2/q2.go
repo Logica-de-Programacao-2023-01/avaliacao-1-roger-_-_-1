@@ -17,16 +17,17 @@ func ProblemsSolved(answers [][3]bool) int {
 
 	for _, row := range answers {
 
-		numTrue := 0
+		validos := 0
 
-		for _, opinion := range row {
+		for _, consenso := range row {
 
-			if opinion == true {
-				numTrue++
+			if consenso == true {
+				validos++
 			}
 		}
-		if numTrue >= 2 {
-			numProblems++
+		if validos >= 2 {
+			nproblemas++
 		}
 	}
-	return numProblems
+	return nproblemas
+}
