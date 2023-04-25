@@ -5,8 +5,6 @@ package bonus
 //
 //Joãozinho quer construir o menor número possível de torres com as barras que tem. Você deve ajudar Joãozinho a usar as
 //barras da melhor maneira possível, determinando a altura da torre mais alta e quantas torres podem ser construídas.
-import "fmt"
-
 func CalculateTowers(barLengths []int) (int, int) {
 	segura := 0
 	for i := 0; i < len(barLengths); i++ {
@@ -25,10 +23,11 @@ func CalculateTowers(barLengths []int) (int, int) {
 		if barLengths[c] == barLengths[c+1] {
 			altura++
 			ntorre--
+		} else {
+			altura = 1
 		}
-		if altura > altmax && altmax != altura {
+		if altmax != altura && altura > altmax {
 			altmax = altura
-			fmt.Println(altmax)
 		}
 		ntorre++
 	}
