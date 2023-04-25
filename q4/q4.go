@@ -9,22 +9,20 @@ package q4
 //estiver em ordem decrescente e 3 se a lista estiver aleatória. A função deve retornar um erro se a lista estiver vazia.
 //Caso a lista possua apenas um elemento, a função deve retornar 3.
 
-func ClassifyPrices(prices []int) (int, error) {
-	if prices []int == 0 {
-		return 0, fmt.errorf("Sua lista esta vasia")
-		} 
-	for i = 0; i <= len(prices); i++ {
-
-		if prices[i] > prices[i+1] {
-			return 2		
-		} else {
-			return 1
-		}
-
-		if prices[i] == prices[i+1] {
-				return 0
+unc ClassifyPrices(prices []int) (int, error) {
+	if len(prices) == 0 {
+		return 0, fmt.Errorf("Sua lista está vasia")
 	}
-    }
+	for i := 0; i <= len(prices); i++ {
+		if prices[i] == prices[i+1] {
+			return 0, nil
+		} else if prices[i] < prices[i+1] {
+			return 1, nil
+		} else {
+			return 2, nil
+
+		}
+	}
 	return 0, nil
 
 }
