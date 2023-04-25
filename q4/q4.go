@@ -24,7 +24,7 @@ func ClassifyPrices(prices []int) (int, error) {
 		if prices[i] == prices[i+1] {
 				return 0
 	}
-	 
+    }
 	return 0, nil
-}
+
 }
