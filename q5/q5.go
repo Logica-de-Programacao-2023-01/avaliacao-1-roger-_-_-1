@@ -17,18 +17,18 @@ package q5
 import "strings"
 
 func ProcessString(s string) string {
-	var vogais = []string{"AEIOUaeiou"} 
+	var vogais = []string{"A","E","I","O","U","a","e","i","o","u"}
 	consoantes := []string{"BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"}
-	for i := 0; i<len(vogais);i++{
-		if strings.ContainsAny(s,vogais[i]){
-			s = strings.ReplaceAll(s,vogais[i],"" )
+	for i := 0; i < len(vogais); i++ {
+		if strings.ContainsAny(s, vogais[i]) {
+			s = strings.ReplaceAll(s, vogais[i], "")
 		}
 	}
-	for i := 0; i<len(consoantes);i++{
-		if strings.ContainsAny(s,consoantes[i]){
-			s = strings.ReplaceAll(s,consoantes[i],"."+strings.ToLower(consoantes[i]))
+	for i := 0; i < len(consoantes); i++ {
+		if strings.ContainsAny(s, consoantes[i]) {
+			s = strings.ReplaceAll(s, consoantes[i], "."+strings.ToLower(consoantes[i]))
 		}
 	}
-	
+
 	return s
 }
