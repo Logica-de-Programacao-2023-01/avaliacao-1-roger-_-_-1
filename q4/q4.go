@@ -10,6 +10,20 @@ package q4
 //Caso a lista possua apenas um elemento, a função deve retornar 3.
 
 func ClassifyPrices(prices []int) (int, error) {
-	// Seu código aqui
+	if prices []int == 0 {
+		return 0, fmt.errorf("Sua lista esta vasia")
+		} 
+	for i = 0; i <= len(prices); i++ {
+
+		if prices[i] > prices[i+1] {
+			return 2		
+		} else {
+			return 1
+		}
+
+		if prices[i] == prices[i+1] {
+				return 0
+	}
+	 
 	return 0, nil
 }
