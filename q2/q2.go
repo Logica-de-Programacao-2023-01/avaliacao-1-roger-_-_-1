@@ -11,8 +11,18 @@ package q2
 //indica o contrário.
 //
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
-
 func ProblemsSolved(answers [][3]bool) int {
-	// Seu código aqui
-	return 0
+	contador := 0
+	respondidos:= 0
+	for i := 0; i < len(answers); i++{
+		for _,respostas := range answers{
+			if respostas[i] == true{
+				contador++
+			}
+		}
+		if contador >=2{
+			respondidos++
+		}
+	}
+	return respondidos
 }
