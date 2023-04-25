@@ -13,19 +13,21 @@ package q5
 //programa na sequência de caracteres inicial.
 //
 //Ajude Pedro a lidar com esta tarefa fácil.
-import "strings"
+import (
+	"strings"
+)
 
 func ProcessString(s string) string {
 	var vogais = []string{"A", "E", "I", "O", "U", "a", "e", "i", "o", "u"}
-	consoantes := []string{"B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"}
-	for i := 0; i < len(vogais); i++ {
-		if strings.ContainsAny(s, vogais[i]) {
-			s = strings.ReplaceAll(s, vogais[i], "")
+	consoantes := []string{"B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"}
+	for _, termo := range vogais{
+		if strings.ContainsAny(s, termo) {
+			s = strings.ReplaceAll(s, termo, "")
 		}
 	}
-	for i := 0; i < len(consoantes); i++ {
-		if strings.ContainsAny(s, consoantes[i]) {
-			s = strings.ReplaceAll(s, consoantes[i], "."+strings.ToLower(consoantes[i]))
+	for _, termo := range consoantes {
+		if strings.ContainsAny(s, termo) {
+			s = strings.ReplaceAll(s, termo, "."+strings.ToLower(termo))
 		}
 	}
 
