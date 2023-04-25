@@ -16,7 +16,7 @@ func CalculateTowers(barLengths []int) (int, int) {
 			}
 		}
 	}
-	altmax := 0
+	altmax := 1
 	ntorre := 1
 	altura := 1
 	for c := 0; c < len(barLengths)-1; c++ {
