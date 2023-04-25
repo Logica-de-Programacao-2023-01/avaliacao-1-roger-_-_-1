@@ -16,7 +16,7 @@ func ClassifyPrices(prices []int) (int, error) {
 	}
 	crescente := 0
 	decrescente := 0
-	for i := 0; i <= len(prices); i++{
+	for i := 0; i < len(prices); i++{
 		if prices[i] >= prices[i+1] {
 			crescente++
 		} else if prices[i] < prices[i+1] {
