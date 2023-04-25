@@ -16,7 +16,7 @@ package q1
 import "fmt"
 
 func DivideWatermelon(weight int) (bool, error) {
-	if weight == 0{
+	if weight <= 0{
 		return false,fmt.Errorf("erro")
 	}
 	if weight%2==0 {
